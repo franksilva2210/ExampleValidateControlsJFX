@@ -6,7 +6,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextInputControl;
 
-public class ValidationControl {
+public class ValidationControlFX {
 	
   /*|-----------------------------------------------------|
     |Propriedades                                         |
@@ -19,10 +19,7 @@ public class ValidationControl {
     |Construtores                                         |
     |-----------------------------------------------------|*/
 	
-	public ValidationControl() {
-		this.control = null;
-		this.error = false;
-	}
+	
 	
   /*|-----------------------------------------------------|
     |Metodos                                              |
@@ -51,6 +48,8 @@ public class ValidationControl {
             validateComboBox();
         else if(control instanceof CheckBox)
         	validateCheckBox();
+        else if(control instanceof DatePicker)
+        	validateDatePicker();
     }
 
     private void validateTextInputField() {
@@ -78,6 +77,10 @@ public class ValidationControl {
     }
     
     private void validateDatePicker() {
-    	
+    	DatePicker datePicker = (DatePicker) control;
+        if (datePicker.getValue() == null || datePicker.getValue().toString().trim().isEmpty())
+        	error = true;
+        else
+        	error = false;
     }
 }

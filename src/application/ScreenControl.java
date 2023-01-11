@@ -47,7 +47,7 @@ public class ScreenControl implements Initializable {
 	}
 	
 	private boolean validationTextField() {
-		ValidationControl valid = new ValidationControl();
+		ValidationControlFX valid = new ValidationControlFX();
 		valid.setControl(textField);
 		
 		valid.validateControl();
@@ -64,7 +64,7 @@ public class ScreenControl implements Initializable {
 	}
 	
 	private boolean validationComboBox() {
-		ValidationControl valid = new ValidationControl();
+		ValidationControlFX valid = new ValidationControlFX();
 		valid.setControl(comboBox);
 		
 		valid.validateControl();
@@ -81,7 +81,7 @@ public class ScreenControl implements Initializable {
 	}
 	
 	private boolean validationCheckBox() {
-		ValidationControl valid = new ValidationControl();
+		ValidationControlFX valid = new ValidationControlFX();
 		valid.setControl(check);
 		
 		valid.validateControl();
