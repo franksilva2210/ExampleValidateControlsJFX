@@ -39,11 +39,16 @@ public class ScreenControl implements Initializable {
 	}
 	
 	private boolean validationControls() {
-		if(!validationTextField() || !validationComboBox() || !validationCheckBox()) {
+		if(!validationTextField())
 			return false;
-		} else {
+		else if(!validationComboBox())
+			return false;
+		else if(!validationCheckBox())
+			return false;
+		else if(!validationDatePicker())
+			return false;
+		else 
 			return true;
-		}
 	}
 	
 	private boolean validationTextField() {
@@ -89,6 +94,23 @@ public class ScreenControl implements Initializable {
 		if(valid.getError()) {
 			txtError.setVisible(true);
 			txtError.setText("Error CheckBox!");
+			return false;
+		} else {
+			txtError.setVisible(false);
+			txtError.setText("");
+			return true;
+		}
+	}
+	
+	private boolean validationDatePicker() {
+		ValidationControlFX valid = new ValidationControlFX();
+		valid.setControl(data);
+		
+		valid.validateControl();
+		
+		if(valid.getError()) {
+			txtError.setVisible(true);
+			txtError.setText("Error DatePicker!");
 			return false;
 		} else {
 			txtError.setVisible(false);
