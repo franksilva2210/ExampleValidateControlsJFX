@@ -6,24 +6,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextInputControl;
 
-public class ValidationControlFX {
-	
-  /*|-----------------------------------------------------|
-    |Propriedades                                         |
-    |-----------------------------------------------------|*/
+public class ValidateControlFx {
 	
 	private Node control;
 	private Boolean error;
-	
-  /*|-----------------------------------------------------|
-    |Construtores                                         |
-    |-----------------------------------------------------|*/
-	
-	
-	
-  /*|-----------------------------------------------------|
-    |Metodos                                              |
-    |-----------------------------------------------------|*/
 	
 	public Node getControl() {
 		return control;
